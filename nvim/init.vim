@@ -2,6 +2,7 @@
 if &compatible
   set nocompatible
 endif
+
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -15,11 +16,22 @@ if dein#load_state('~/.cache/dein')
   call dein#save_state()
 endif
 
-filetype plugin indent on
+filetype plugin on
+filetype indent off
 syntax enable
 
 " Show line numbers on the left.
 set number
+
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+set hidden
+
+set clipboard&
+set clipboard^=unnamedplus
+
+set mouse=a
 
 nnoremap <silent> <Space>x
   \ :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
@@ -73,9 +85,6 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
-
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 colorscheme desert
 
