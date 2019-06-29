@@ -13,6 +13,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/defx.nvim')
     call dein#add('itchyny/lightline.vim')
     
+    call dein#add('w0rp/ale')
+    
     call dein#add('morhetz/gruvbox')
     
     call dein#end()
@@ -106,6 +108,11 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> cd
     \ defx#do_action('change_vim_cwd')
 endfunction
+
+let g:ale_linters = {
+    \'c'   : ['clangd'],
+    \'cpp' : ['clangd']
+\}
 
 "colorscheme desert
 colorscheme gruvbox
