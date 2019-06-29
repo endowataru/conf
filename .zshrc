@@ -16,3 +16,5 @@ PROMPT='%F{green}%n@%m%u%f %~ $ '
 
 setopt auto_cd
 
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
