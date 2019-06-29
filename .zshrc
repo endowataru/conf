@@ -24,6 +24,7 @@ alias ls="ls -G"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 setopt auto_cd
+setopt share_history
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
