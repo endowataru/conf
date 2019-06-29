@@ -30,10 +30,16 @@ set undofile
 " Show line numbers on the left.
 set number
 
+set ignorecase
+set smartcase
+
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+set autoread
 set hidden
+
+set noequalalways
 
 set clipboard&
 set clipboard^=unnamedplus
@@ -42,6 +48,8 @@ set mouse=a
 
 set spell
 set spelllang=en,cjk
+
+set nofoldenable
 
 set tabstop=4
 set shiftwidth=4
