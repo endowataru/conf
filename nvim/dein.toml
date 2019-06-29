@@ -74,6 +74,8 @@ if executable('clangd')
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
         \ })
 endif
+" Use ALE instead.
+let g:lsp_diagnostics_enabled = 0
 '''
 
 [[plugins]]
