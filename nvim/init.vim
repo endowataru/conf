@@ -27,6 +27,8 @@ syntax enable
 
 set undofile
 
+set autoread
+
 " Show line numbers on the left.
 set number
 
