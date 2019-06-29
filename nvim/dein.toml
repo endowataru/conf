@@ -98,6 +98,9 @@ command! -bang -nargs=* Rg
 '''
 
 [[plugins]]
+repo = 'bfrg/vim-cpp-modern'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
