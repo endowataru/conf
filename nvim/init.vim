@@ -64,6 +64,11 @@ noremap  <silent> <C-S>      :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
+nnoremap <silent> <S-Down>  :resize -2<CR>
+nnoremap <silent> <S-Up>    :resize +2<CR>
+nnoremap <silent> <S-Left>  :vertical resize -3<CR>
+nnoremap <silent> <S-Right> :vertical resize +3<CR>
+
 nnoremap <silent> <Space>e :Defx -new<CR>
 nnoremap <silent> <Space>x
     \ :Defx -split=vertical -winwidth=28 -direction=topleft<CR>
