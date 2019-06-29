@@ -33,6 +33,10 @@ set clipboard^=unnamedplus
 
 set mouse=a
 
+noremap  <silent> <C-S>      :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
 nnoremap <silent> <Space>x
   \ :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
 
