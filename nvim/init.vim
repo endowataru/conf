@@ -15,6 +15,10 @@ endif
 filetype plugin indent on
 syntax enable
 
+" Show line numbers on the left.
+set number
+
+
 
 colorscheme desert
 
