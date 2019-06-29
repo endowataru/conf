@@ -37,6 +37,7 @@ noremap  <silent> <C-S>      :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
+nnoremap <silent> <Space>e :Defx -new<CR>
 nnoremap <silent> <Space>x
   \ :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
 
