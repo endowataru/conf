@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+brew "neovim"
+brew "python"
+brew "zsh"
+brew "htop"
+cask "docker"
