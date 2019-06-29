@@ -49,7 +49,7 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 
 nnoremap <silent> <Space>e :Defx -new<CR>
 nnoremap <silent> <Space>x
-    \ :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
+    \ :Defx -split=vertical -winwidth=28 -direction=topleft<CR>
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
