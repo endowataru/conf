@@ -55,6 +55,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+
 noremap  <silent> <C-S>      :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
