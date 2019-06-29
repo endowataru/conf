@@ -22,7 +22,7 @@ syntax enable
 set number
 
 nnoremap <silent> <Space>x
-  \ :Defx -split=vertical -winwidth=50 -direction=topleft<CR>
+  \ :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
