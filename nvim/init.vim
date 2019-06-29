@@ -8,17 +8,8 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
-    
     call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-    call dein#add('Shougo/defx.nvim')
-    call dein#add('itchyny/lightline.vim')
-    
-    call dein#add('prabirshrestha/async.vim')
-    call dein#add('prabirshrestha/vim-lsp')
-    call dein#add('w0rp/ale')
-    
-    call dein#add('morhetz/gruvbox')
-    
+    call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
     call dein#end()
     call dein#save_state()
 endif
@@ -70,77 +61,6 @@ nnoremap <silent> <S-Down>  :resize -2<CR>
 nnoremap <silent> <S-Up>    :resize +2<CR>
 nnoremap <silent> <S-Left>  :vertical resize -3<CR>
 nnoremap <silent> <S-Right> :vertical resize +3<CR>
-
-nnoremap <silent> <Space>e :Defx -new<CR>
-nnoremap <silent> <Space>x
-    \ :Defx -split=vertical -winwidth=28 -direction=topleft<CR>
-
-autocmd FileType defx call s:defx_my_settings()
-function! s:defx_my_settings() abort
-    nnoremap <silent><buffer><expr> <CR>
-    \ defx#do_action('open')
-    nnoremap <silent><buffer><expr> l
-    \ defx#do_action('open_tree')
-    nnoremap <silent><buffer><expr> e
-    \ defx#do_action('drop')
-    nnoremap <silent><buffer><expr> t
-    \ defx#do_action('open_or_close_tree')
-    nnoremap <silent><buffer><expr> T
-    \ defx#do_action('open_tree_recursive')
-    nnoremap <silent><buffer><expr> K
-    \ defx#do_action('new_directory')
-    nnoremap <silent><buffer><expr> N
-    \ defx#do_action('new_file')
-    nnoremap <silent><buffer><expr> S
-    \ defx#do_action('toggle_sort', 'time')
-    nnoremap <silent><buffer><expr> d
-    \ defx#do_action('remove')
-    nnoremap <silent><buffer><expr> r
-    \ defx#do_action('rename')
-    nnoremap <silent><buffer><expr> !
-    \ defx#do_action('execute_command')
-    nnoremap <silent><buffer><expr> x
-    \ defx#do_action('execute_system')
-    nnoremap <silent><buffer><expr> yy
-    \ defx#do_action('yank_path')
-    nnoremap <silent><buffer><expr> .
-    \ defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> h
-    \ defx#do_action('cd', ['..'])
-    nnoremap <silent><buffer><expr> ~
-    \ defx#do_action('cd')
-    nnoremap <silent><buffer><expr> q
-    \ defx#do_action('quit')
-    nnoremap <silent><buffer><expr> <Space>
-    \ defx#do_action('toggle_select') . 'j'
-    nnoremap <silent><buffer><expr> *
-    \ defx#do_action('toggle_select_all')
-    nnoremap <silent><buffer><expr> j
-    \ line('.') == line('$') ? 'gg' : 'j'
-    nnoremap <silent><buffer><expr> k
-    \ line('.') == 1 ? 'G' : 'k'
-    nnoremap <silent><buffer><expr> <C-l>
-    \ defx#do_action('redraw')
-    nnoremap <silent><buffer><expr> <C-g>
-    \ defx#do_action('print')
-    nnoremap <silent><buffer><expr> cd
-    \ defx#do_action('change_vim_cwd')
-endfunction
-
-" LSP
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
-
-" ALE
-let g:ale_linters = {
-    \'c'   : ['clangd'],
-    \'cpp' : ['clangd']
-\}
 
 "colorscheme desert
 colorscheme gruvbox
