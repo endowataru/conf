@@ -13,6 +13,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/defx.nvim')
     call dein#add('itchyny/lightline.vim')
     
+    call dein#add('morhetz/gruvbox')
+    
     call dein#end()
     call dein#save_state()
 endif
@@ -99,5 +101,6 @@ function! s:defx_my_settings() abort
     \ defx#do_action('change_vim_cwd')
 endfunction
 
-colorscheme desert
+"colorscheme desert
+colorscheme gruvbox
 
