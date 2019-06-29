@@ -23,6 +23,8 @@ filetype plugin on
 filetype indent off
 syntax enable
 
+set undofile
+
 " Show line numbers on the left.
 set number
 
