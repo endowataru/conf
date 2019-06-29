@@ -13,6 +13,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/defx.nvim')
     call dein#add('itchyny/lightline.vim')
     
+    call dein#add('prabirshrestha/async.vim')
+    call dein#add('prabirshrestha/vim-lsp')
     call dein#add('w0rp/ale')
     
     call dein#add('morhetz/gruvbox')
@@ -127,6 +129,16 @@ function! s:defx_my_settings() abort
     \ defx#do_action('change_vim_cwd')
 endfunction
 
+" LSP
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+
+" ALE
 let g:ale_linters = {
     \'c'   : ['clangd'],
     \'cpp' : ['clangd']
