@@ -14,6 +14,9 @@ alias s=ssh
 
 PROMPT='%F{green}%n@%m%u%f %~ $ '
 
+alias ls="ls -G"
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
 setopt auto_cd
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
