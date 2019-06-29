@@ -11,6 +11,7 @@ if dein#load_state('~/.cache/dein')
     
     call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
     call dein#add('Shougo/defx.nvim')
+    call dein#add('itchyny/lightline.vim')
     
     call dein#end()
     call dein#save_state()
