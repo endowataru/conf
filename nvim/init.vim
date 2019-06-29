@@ -34,6 +34,7 @@ set clipboard^=unnamedplus
 set mouse=a
 
 set spell
+set spelllang=en,cjk
 
 set tabstop=4
 set shiftwidth=4
