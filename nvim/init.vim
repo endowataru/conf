@@ -33,6 +33,12 @@ set clipboard^=unnamedplus
 
 set mouse=a
 
+set spell
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 noremap  <silent> <C-S>      :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
