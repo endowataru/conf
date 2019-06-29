@@ -26,5 +26,8 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 setopt auto_cd
 setopt share_history
 
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+zstyle ':completion:*:default' menu select=2
+
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
