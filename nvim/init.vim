@@ -19,6 +19,8 @@ syntax enable
 set number
 
 
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 colorscheme desert
 
