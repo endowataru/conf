@@ -54,8 +54,12 @@ nnoremap <silent> <Space>x
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> <CR>
-    \ defx#do_action('drop')
+    \ defx#is_directory() ?
+    \ defx#do_action('open_tree') :
+    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> l
+    \ defx#is_directory() ?
+    \ defx#do_action('open_tree') :
     \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open_or_close_tree')
