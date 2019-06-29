@@ -86,6 +86,9 @@ let g:ale_linters = {
 '''
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
 repo = 'morhetz/gruvbox'
 
 
