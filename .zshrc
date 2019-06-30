@@ -24,10 +24,20 @@ alias ls="ls -G"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 setopt auto_cd
-setopt share_history
 
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 zstyle ':completion:*:default' menu select=2
+
+HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt share_history
+setopt append_history
+setopt inc_append_history
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
