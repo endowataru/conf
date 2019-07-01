@@ -31,6 +31,9 @@ zstyle ':completion:*:default' menu select=2
 HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=100000
+export LISTMAX=10000
+setopt listpacked
+setopt menu_complete
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt share_history
