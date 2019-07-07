@@ -1,9 +1,9 @@
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
-nnoremap <silent> <Space>e :Defx -new<CR>
-nnoremap <silent> <Space>x
-    \ :Defx -split=vertical -winwidth=28 -direction=topleft<CR>
+"nnoremap <silent> <Space>e :Defx -new<CR>
+"nnoremap <silent> <Space>x
+"    \ :Defx -split=vertical -winwidth=28 -direction=topleft<CR>
 
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
@@ -56,6 +56,13 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> cd
     \ defx#do_action('change_vim_cwd')
 endfunction
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+nnoremap <silent> <Space>e :NERDTreeToggle<CR>
+let NERDTreeMinimalUI=1
 '''
 
 [[plugins]]
