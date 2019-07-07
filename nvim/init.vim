@@ -64,6 +64,8 @@ nnoremap <silent> <S-Right> :vertical resize +3<CR>
 
 nnoremap <silent> <Space>t :bel 10sp +terminal<CR>:startinsert<CR>
 
+tnoremap <Esc> <C-\><C-n>
+
 "colorscheme desert
 colorscheme gruvbox
 
