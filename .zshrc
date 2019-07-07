@@ -18,6 +18,8 @@ alias g=git
 alias v=nvim
 alias s=ssh
 
+alias vd="nvim \$(date '+%Y%m%d'.markdown)"
+
 PROMPT='%F{green}%n@%m%u%f %~ $ '
 
 alias ls="ls -G"
