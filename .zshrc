@@ -17,6 +17,7 @@ zplugin light zdharma/fast-syntax-highlighting
 alias g=git
 alias v=nvim
 alias s=ssh
+alias t=tmux
 
 alias vd="nvim \$(date '+%Y%m%d'.markdown)"
 
