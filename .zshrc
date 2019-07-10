@@ -23,7 +23,16 @@ alias vd="nvim \$(date '+%Y%m%d'.markdown)"
 
 PROMPT='%F{green}%n@%m%u%f %~ $ '
 
-alias ls="ls -G"
+case "${OSTYPE}" in
+linux*)
+    alias ls='ls --color'
+    alias ll='ls -l --color'
+    ;;
+darwin*)
+    alias ls='ls -G'
+    alias ll='ls -lG'
+esac
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 setopt auto_cd
