@@ -66,6 +66,9 @@ nnoremap <silent> <Space>t :bel 10sp +terminal<CR>:startinsert<CR>
 
 tnoremap <Esc> <C-\><C-n>
 
+" Reference: https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor
+nnoremap <Space>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 "colorscheme desert
 colorscheme gruvbox
 
