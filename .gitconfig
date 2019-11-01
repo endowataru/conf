@@ -6,3 +6,9 @@
     di   = diff
     co   = checkout
 
+[format]
+    pretty = fuller
+
+[log]
+    date = iso-local
+
