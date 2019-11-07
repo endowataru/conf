@@ -2,13 +2,19 @@
     editor = nvim
 
 [alias]
-    st   = status
-    di   = diff
-    co   = checkout
+    st = status
+    di = diff
+    dis = diff --staged
+    co = checkout
+    sw = switch
+    cm = commit
 
 [format]
     pretty = fuller
 
 [log]
     date = iso-local
+
+[user]
+    useConfigOnly = true
 
