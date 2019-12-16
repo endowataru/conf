@@ -18,3 +18,6 @@
 [user]
     useConfigOnly = true
 
+[branch]
+    sort = -authordate
+
