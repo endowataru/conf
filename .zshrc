@@ -18,6 +18,7 @@ alias g=git
 alias v=nvim
 alias s=ssh
 alias t=tmux
+alias ta=tmux attach
 
 alias vd="nvim \$(date '+%Y%m%d'.markdown)"
 
