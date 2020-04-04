@@ -1,6 +1,6 @@
 #!/bin/bash
 for f in .zshrc;
 do
-    ln -si `dirname $0`/$f ~/$f
+    ln -si $(cd $(dirname $0); pwd)/$f ~/$f
 done
 
