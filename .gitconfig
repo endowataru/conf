@@ -21,3 +21,6 @@
 [branch]
     sort = -authordate
 
+[include]
+    path = ~/.gitconfig.local
+
