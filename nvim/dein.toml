@@ -61,6 +61,9 @@ let g:fzf_layout = { 'down': '~20%' }
 repo = 'bfrg/vim-cpp-modern'
 
 [[plugins]]
+repo = 'HerringtonDarkholme/yats.vim'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
