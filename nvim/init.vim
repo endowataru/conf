@@ -72,3 +72,7 @@ nnoremap <Space>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 "colorscheme desert
 colorscheme gruvbox
 
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
