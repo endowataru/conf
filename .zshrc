@@ -51,7 +51,7 @@ zstyle ':completion:*' list-colors "${LS_COLORS}"
 zstyle ':completion:*:default' menu select=2
 
 HISTFILE=~/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=100000
 export SAVEHIST=100000
 export LISTMAX=10000
 setopt listpacked
