@@ -76,3 +76,10 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
+nnoremap <Space>2 :setlocal tabstop=2<CR>:setlocal shiftwidth=2<CR>:setlocal expandtab<CR>
+nnoremap <Space>4 :setlocal tabstop=4<CR>:setlocal shiftwidth=4<CR>:setlocal expandtab<CR>
+
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+
