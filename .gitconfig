@@ -26,6 +26,7 @@
 
 [pull]
     ff = only
+    rebase = true
 
 [diff]
     wsErrorHighlight = all
