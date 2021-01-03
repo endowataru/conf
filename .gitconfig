@@ -30,4 +30,5 @@
 
 [diff]
     wsErrorHighlight = all
+    colorMoved = zebra
 
