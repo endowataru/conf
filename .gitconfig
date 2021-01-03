@@ -32,3 +32,6 @@
     wsErrorHighlight = all
     colorMoved = zebra
 
+[fetch]
+    prune = true
+
