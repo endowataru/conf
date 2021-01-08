@@ -16,6 +16,7 @@ endif
 
 filetype plugin on
 filetype indent off
+filetype plugin indent off
 syntax enable
 
 set undofile
