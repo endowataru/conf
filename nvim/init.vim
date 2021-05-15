@@ -63,7 +63,8 @@ nnoremap <silent> <S-Up>    :resize +2<CR>
 nnoremap <silent> <S-Left>  :vertical resize -3<CR>
 nnoremap <silent> <S-Right> :vertical resize +3<CR>
 
-nnoremap <silent> <Space>t :bel 10sp +terminal<CR>:startinsert<CR>
+nnoremap <silent> <Space>t  :bel 10sp +terminal<CR>:startinsert<CR>
+nnoremap <silent> <Space>T  :terminal<CR>
 
 tnoremap <Esc> <C-\><C-n>
 
