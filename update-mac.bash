@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -ux
 
 # Upgrade homebrew
 brew update
