@@ -1,26 +1,8 @@
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+if type sheldon &> /dev/null; then
+    # Load plugins from sheldon.
+    eval "$(sheldon source)"
 fi
-
-# Load zplugin.
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit ice wait"0" blockf
-zinit light zsh-users/zsh-completions
-
-zinit ice wait"0" atload"_zsh_autosuggest_start"
-zinit light zsh-users/zsh-autosuggestions
-
-zinit ice wait"0" atinit"zpcompinit; zpcdreplay"
-zinit light zdharma/fast-syntax-highlighting
 
 # Define aliases.
 alias g=git
