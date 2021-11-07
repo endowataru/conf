@@ -5,9 +5,8 @@ set -ux
 brew update
 brew upgrade
 
-# Update zinit
-zsh -i -c "zinit self-update -q"
-zsh -i -c "zinit update --all -q"
+# Update sheldon
+sheldon lock --update
 
 # Upgrade dein
 nvim -c "call dein#update()" -c q
