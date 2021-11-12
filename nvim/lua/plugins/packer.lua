@@ -57,6 +57,17 @@ require("packer").startup(function(use)
       end
   }
 
+  -- Git
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('plugins/gitsigns')
+    end
+  }
+
   -- Languages
   use "bfrg/vim-cpp-modern" -- C++
   use "rust-lang/rust.vim" -- Rust
