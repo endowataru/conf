@@ -17,7 +17,10 @@ require("packer").startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
+
+  -- Snippets
   use 'hrsh7th/vim-vsnip'
+  use "rafamadriz/friendly-snippets"
 
   -- LSP
   use { "ray-x/lsp_signature.nvim", }
