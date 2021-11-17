@@ -9,5 +9,5 @@ brew upgrade
 sheldon lock --update
 
 # Update packer plugins
-nvim -c "PackerUpdate" -c q
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
