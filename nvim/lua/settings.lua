@@ -63,5 +63,5 @@ vim.api.nvim_set_keymap('n', '<Leader>4', ':setlocal tabstop=4<CR>:setlocal shif
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 
 -- Reference: https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor
-vim.api.nvim_set_keymap('n', '<Leader>s', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>s', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { noremap = true, silent = false })
 
