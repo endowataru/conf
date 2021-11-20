@@ -7,15 +7,30 @@ require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
+  use {
+    "neovim/nvim-lspconfig",
+    config = function ()
+      require("plugins/nvim-lspconfig")
+    end
+  }
+  use {
+    "williamboman/nvim-lsp-installer",
+    config = function ()
+      require("plugins/nvim-lsp-installer")
+    end
+  }
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function ()
+      require("plugins/nvim-cmp")
+    end
+  }
   use 'hrsh7th/cmp-vsnip'
 
   -- Snippets
