@@ -40,6 +40,20 @@ require("packer").startup(function(use)
   -- LSP
   use { "ray-x/lsp_signature.nvim", }
 
+  -- DAP
+  use {
+    'mfussenegger/nvim-dap',
+    config = function ()
+      require('plugins/nvim-dap')
+    end
+  }
+  use { 
+    'Pocco81/DAPInstall.nvim',
+    config = function ()
+      require('plugins/dap-install')
+    end
+  }
+
   -- Trouble
   use {
     "folke/trouble.nvim",
