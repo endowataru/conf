@@ -124,6 +124,13 @@ require("packer").startup(function(use)
   use "cespare/vim-toml" -- TOML
   use "jparise/vim-graphql" -- GraphQL
 
+  -- Rust
+  use {
+    'simrat39/rust-tools.nvim',
+    config = function ()
+      require('rust-tools').setup({})
+    end
+  }
   -- Theme
   use { "morhetz/gruvbox", config = function() vim.cmd [[colorscheme gruvbox]] end }
 
