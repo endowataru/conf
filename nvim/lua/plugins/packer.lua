@@ -79,6 +79,23 @@ require("packer").startup(function(use)
     end
   }
 
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup {
+        options = {
+          buffer_close_icon = '', -- TODO: not provided in Cica
+          diagnostics = "nvim_lsp",
+          tab_size = 25,
+        }
+      }
+      vim.api.nvim_set_keymap('n', '<Leader>bn', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>bp', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+    end
+  }
+
   -- Filer
   use {
       'kyazdani42/nvim-tree.lua',
