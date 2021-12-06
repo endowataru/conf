@@ -39,6 +39,13 @@ vim.o.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
 
 vim.o.clipboard = "unnamedplus"
 
+-- Disable adding a newline at EOF.
+vim.opt.fixendofline = false
+
+-- Automatically detect file encodings and file formats.
+vim.opt.fileformats = 'unix,dos,mac'
+vim.opt.fileencodings = 'iso-2022-jp,euc-jp,cp932,sjis,ucs-bom,utf-8'
+
 vim.g.mapleader = " "
 
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
