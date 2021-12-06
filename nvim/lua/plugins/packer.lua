@@ -7,14 +7,10 @@ require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- LSP
-  use {
-    "neovim/nvim-lspconfig",
-    config = function ()
-      require("plugins/nvim-lspconfig")
-    end
-  }
+  use "neovim/nvim-lspconfig"
   use {
     "williamboman/nvim-lsp-installer",
+    requires = "neovim/nvim-lspconfig",
     config = function ()
       require("plugins/nvim-lsp-installer")
     end
