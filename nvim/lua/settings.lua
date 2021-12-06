@@ -44,7 +44,8 @@ vim.opt.fixendofline = false
 
 -- Automatically detect file encodings and file formats.
 vim.opt.fileformats = 'unix,dos,mac'
-vim.opt.fileencodings = 'iso-2022-jp,euc-jp,cp932,sjis,ucs-bom,utf-8'
+vim.opt.fileencoding = 'utf-8'
+vim.opt.fileencodings = 'ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,sjis'
 
 vim.g.mapleader = " "
 
