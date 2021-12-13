@@ -34,6 +34,9 @@ RUN zsh -c "sheldon lock --update"
 RUN nvim --headless -c 'quitall'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+# Install LSP in neovim
+RUN nvim --headless -c "LspInstall --sync rust_analyzer jdtls" -c q
+
 # Open zsh
 WORKDIR /root
 CMD ["zsh"]
