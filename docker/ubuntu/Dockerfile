@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git curl build-essential libssl-dev pkg-config zsh tmux software-properties-common
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git curl build-essential libssl-dev pkg-config zsh tmux software-properties-common wget
 RUN add-apt-repository ppa:neovim-ppa/stable && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y neovim
