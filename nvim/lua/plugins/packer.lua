@@ -119,6 +119,7 @@ require("packer").startup(function(use)
   use "HerringtonDarkholme/yats.vim" -- TypeScript
   use "cespare/vim-toml" -- TOML
   use "jparise/vim-graphql" -- GraphQL
+  use "dart-lang/dart-vim-plugin" -- Dart
 
   -- Rust
   use {
