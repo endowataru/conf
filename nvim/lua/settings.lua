@@ -30,6 +30,9 @@ vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
+-- Turn off the filetype-based indentation.
+vim.cmd('filetype indent off')
+
 vim.o.equalalways = false
 
 vim.o.lazyredraw = true
