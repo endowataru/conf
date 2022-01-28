@@ -113,6 +113,9 @@ require("packer").startup(function(use)
     end
   }
 
+  -- Indent
+  use "tpope/vim-sleuth"
+
   -- Languages
   use "bfrg/vim-cpp-modern" -- C++
   use "rust-lang/rust.vim" -- Rust
