@@ -30,6 +30,11 @@ vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
+-- Enable smart wrap.
+vim.o.breakindent = true
+vim.o.breakindentopt = "min:20,shift:0,sbr"
+vim.o.showbreak = ">>> "
+
 -- Turn off the filetype-based indentation.
 vim.cmd('filetype indent off')
 
