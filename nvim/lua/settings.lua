@@ -70,7 +70,7 @@ vim.api.nvim_set_keymap('n', '<S-Left>' , ':vertical resize -3<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<S-Right>', ':vertical resize +3<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>t', ':bel 10sp +terminal<CR>:startinsert<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>T', ':terminal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>T', ':terminal<CR>:startinsert<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>2', ':setlocal tabstop=2<CR>:setlocal shiftwidth=2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>4', ':setlocal tabstop=4<CR>:setlocal shiftwidth=4<CR>', { noremap = true, silent = true })
