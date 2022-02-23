@@ -37,3 +37,10 @@ docker run -v $(pwd):/mnt -w /mnt -it wendo/ubuntu-shell:main
 - homebrew
     - `Brewfile`s are located at `brew/`.
 
+### Neovim key mappings
+
+- `[Space]e` : Open the filer (nvim-tree).
+- `[Space]t` : Open the terminal.
+- `<Shift-Arrow>` : Resize the current window.
+- `<Ctrl-S>` : Save the current buffer.
+
