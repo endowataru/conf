@@ -114,7 +114,13 @@ require("packer").startup(function(use)
   }
 
   -- Indent
-  use "tpope/vim-sleuth"
+  use {
+    "tpope/vim-sleuth",
+    config = function()
+      -- "filetype indent" has been disabled in init.lua.
+      vim.g.sleuth_no_filetype_indent_on = 1
+    end
+  }
 
   -- Languages
   use "bfrg/vim-cpp-modern" -- C++
