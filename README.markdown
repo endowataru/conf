@@ -6,6 +6,8 @@
 This repository is a collection of my configuration files for shell tools.
 They are supposed to mostly work both on macOS and Linux.
 
+![Example](example.png)
+
 ## Docker image
 
 You can try the environment configured by this repository
