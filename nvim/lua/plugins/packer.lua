@@ -43,12 +43,13 @@ require("packer").startup(function(use)
       require('plugins/nvim-dap')
     end
   }
-  use { 
-    'Pocco81/DAPInstall.nvim',
-    config = function ()
-      require('plugins/dap-install')
-    end
-  }
+  -- Note: DAPInstall.nvim was renamed.
+  --use { 
+  --  'Pocco81/DAPInstall.nvim',
+  --  config = function ()
+  --    require('plugins/dap-install')
+  --  end
+  --}
 
   -- Trouble
   use {
