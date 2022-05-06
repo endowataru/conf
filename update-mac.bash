@@ -11,3 +11,17 @@ sheldon lock --update
 # Update packer plugins
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+# Update nodejs
+if type npm &> /dev/null; then
+    npm update -g
+    npm upgrade -g
+fi
+
+# Update rust
+if type rustup &> /dev/null; then
+    rustup update
+fi
+if type cargo &> /dev/null; then
+    cargo install-update -a
+fi
+
