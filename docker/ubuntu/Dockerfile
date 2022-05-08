@@ -1,13 +1,19 @@
 FROM ubuntu:22.04
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git curl build-essential libssl-dev pkg-config zsh tmux software-properties-common wget
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y default-jre default-jdk
-RUN add-apt-repository ppa:neovim-ppa/unstable && \
+    DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
+    # Install essential packages
+    DEBIAN_FRONTEND=noninteractive apt-get install -y git curl build-essential \
+        libssl-dev pkg-config zsh tmux software-properties-common wget && \
+    # Install Java
+    DEBIAN_FRONTEND=noninteractive apt-get install -y default-jre default-jdk && \
+    # Install Neovim
+    add-apt-repository ppa:neovim-ppa/unstable && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y neovim
+    DEBIAN_FRONTEND=noninteractive apt-get install -y neovim && \
+    # Clean up
+    DEBIAN_FRONTEND=noninteractive apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
