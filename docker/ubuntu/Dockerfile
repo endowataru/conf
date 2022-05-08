@@ -5,7 +5,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git curl build-essential libssl-dev pkg-config zsh tmux software-properties-common wget
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y default-jre default-jdk
-RUN add-apt-repository ppa:neovim-ppa/stable && \
+RUN add-apt-repository ppa:neovim-ppa/unstable && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y neovim
 
