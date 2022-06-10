@@ -98,7 +98,12 @@ require("packer").startup(function(use)
       'kyazdani42/nvim-tree.lua',
       requires = 'kyazdani42/nvim-web-devicons',
       config = function()
-        require('nvim-tree').setup { filters = { dotfiles = true } }
+        require('nvim-tree').setup {
+          filters = { dotfiles = true },
+          actions = {
+            open_file = { resize_window = false },
+          },
+        }
         vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
       end
   }
