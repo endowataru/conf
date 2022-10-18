@@ -33,5 +33,5 @@ github = 'zsh-users/zsh-syntax-highlighting'
 apply = ["defer"]
 
 [templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 
