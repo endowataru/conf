@@ -11,6 +11,11 @@ sheldon lock --update
 # Update packer plugins
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+# Update asdf
+if type asdf &> /dev/null; then
+    asdf plugin update --all
+fi
+
 # Update nodejs
 if type npm &> /dev/null; then
     npm update -g
