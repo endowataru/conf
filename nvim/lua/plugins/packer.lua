@@ -7,13 +7,20 @@ require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig"
   use {
-    "williamboman/nvim-lsp-installer",
-    requires = "neovim/nvim-lspconfig",
-    config = function ()
-      require("plugins/nvim-lsp-installer")
-    end
+    {
+      "williamboman/mason.nvim",
+      config = function()
+        require("plugins/mason")
+      end
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      config = function()
+        require("plugins/mason-lspconfig")
+      end
+    },
+    "neovim/nvim-lspconfig",
   }
 
   -- Completion
