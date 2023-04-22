@@ -1,57 +1,61 @@
-local install_path = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  packer_bootstrap = vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-require("packer").startup(function(use)
-  use "wbthomason/packer.nvim"
-
+require("lazy").setup({
   -- LSP
-  use {
-    {
-      "williamboman/mason.nvim",
-      config = function()
-        require("plugins/mason")
-      end
-    },
-    {
-      "williamboman/mason-lspconfig.nvim",
-      config = function()
-        require("plugins/mason-lspconfig")
-      end
-    },
-    "neovim/nvim-lspconfig",
-  }
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("plugins/mason")
+    end
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("plugins/mason-lspconfig")
+    end
+  },
+  "neovim/nvim-lspconfig",
 
   -- Completion
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use {
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  {
     'hrsh7th/nvim-cmp',
     config = function ()
       require("plugins/nvim-cmp")
     end
-  }
-  use 'hrsh7th/cmp-vsnip'
+  },
+  'hrsh7th/cmp-vsnip',
 
   -- Snippets
-  use 'hrsh7th/vim-vsnip'
-  use "rafamadriz/friendly-snippets"
+  'hrsh7th/vim-vsnip',
+  "rafamadriz/friendly-snippets",
 
   -- LSP
-  use { "ray-x/lsp_signature.nvim", }
+  "ray-x/lsp_signature.nvim",
 
   -- DAP
-  use {
+  {
     'mfussenegger/nvim-dap',
     config = function ()
       require('plugins/nvim-dap')
     end
-  }
+  },
   -- Note: DAPInstall.nvim was renamed.
-  --use { 
+  --{ 
   --  'Pocco81/DAPInstall.nvim',
   --  config = function ()
   --    require('plugins/dap-install')
@@ -59,34 +63,34 @@ require("packer").startup(function(use)
   --}
 
   -- Trouble
-  use {
+  {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    dependencies = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup {
         -- your configuration comes here
-        -- or leave it empty to use the default settings
+        -- or leave it empty to the default settings
         -- refer to the configuration section below
       }
       vim.api.nvim_set_keymap("n", "<Leader>x", "<cmd>TroubleToggle<cr>",
         {silent = true, noremap = true}
       )
     end
-  }
+  },
 
   -- statusline
-  use {
+  {
     'famiu/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require('feline').setup()
     end
-  }
+  },
 
   -- bufferline
-  use {
+  {
     'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'kyazdani42/nvim-web-devicons',
     config = function()
       require("bufferline").setup {
         options = {
@@ -98,25 +102,25 @@ require("packer").startup(function(use)
       vim.api.nvim_set_keymap('n', '<Leader>bn', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<Leader>bp', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
     end
-  }
+  },
 
   -- Filer
-  use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = function()
-        require('nvim-tree').setup {
-          filters = { dotfiles = true },
-          actions = {
-            open_file = { resize_window = false },
-          },
-        }
-        vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-      end
-  }
+  {
+    'kyazdani42/nvim-tree.lua',
+    dependencies = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('nvim-tree').setup {
+        filters = { dotfiles = true },
+        actions = {
+          open_file = { resize_window = false },
+        },
+      }
+      vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+    end
+  },
 
   -- Git
-  use {
+  {
     'lewis6991/gitsigns.nvim',
     requires = {
       'nvim-lua/plenary.nvim'
@@ -124,39 +128,35 @@ require("packer").startup(function(use)
     config = function()
       require('plugins/gitsigns')
     end
-  }
+  },
 
   -- Indent
-  use {
+  {
     "tpope/vim-sleuth",
     config = function()
       -- "filetype indent" has been disabled in init.lua.
       vim.g.sleuth_no_filetype_indent_on = 1
     end
-  }
+  },
 
   -- Languages
-  use "bfrg/vim-cpp-modern" -- C++
-  use "rust-lang/rust.vim" -- Rust
-  use "HerringtonDarkholme/yats.vim" -- TypeScript
-  use "cespare/vim-toml" -- TOML
-  use "jparise/vim-graphql" -- GraphQL
-  use "dart-lang/dart-vim-plugin" -- Dart
+  "bfrg/vim-cpp-modern", -- C++
+  "rust-lang/rust.vim", -- Rust
+  "HerringtonDarkholme/yats.vim", -- TypeScript
+  "cespare/vim-toml", -- TOML
+  "jparise/vim-graphql", -- GraphQL
+  "dart-lang/dart-vim-plugin", -- Dart
 
   -- Rust
-  use {
+  {
     'simrat39/rust-tools.nvim',
     config = function ()
       require('rust-tools').setup({})
     end
-  }
+  },
   -- Theme
-  use { "morhetz/gruvbox", config = function() vim.cmd [[colorscheme gruvbox]] end }
-
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+  { "morhetz/gruvbox", config = function() vim.cmd [[colorscheme gruvbox]] end },
+})
 
 vim.api.nvim_exec(
   [[

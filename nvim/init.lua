@@ -1,2 +1,2 @@
 require("settings")
-require("plugins/packer")
+require("plugins/lazy")
