@@ -80,6 +80,7 @@ require("lazy").setup({
 
   -- statusline
   {
+    -- TODO: no longer maintained
     'famiu/feline.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
