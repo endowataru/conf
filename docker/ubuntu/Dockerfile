@@ -39,7 +39,7 @@ RUN zsh -c "sheldon lock --update"
 
 # Install plugins in neovim
 RUN nvim --headless -c 'quitall'
-RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+RUN nvim --headless "+Lazy! sync" +qa
 
 # Install LSP in neovim
 RUN nvim --headless -c "LspInstall --sync rust_analyzer jdtls" -c q

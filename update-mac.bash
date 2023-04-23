@@ -9,7 +9,7 @@ brew upgrade
 sheldon lock --update
 
 # Update packer plugins
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --headless "+Lazy! sync" +qa
 
 # Update asdf
 if type asdf &> /dev/null; then
