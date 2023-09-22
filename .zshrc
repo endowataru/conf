@@ -11,7 +11,7 @@ alias s=ssh
 alias t=tmux
 alias ta=tmux attach
 
-alias vd="nvim \$(date '+%Y%m%d'.markdown)"
+alias vd="nvim \$(date '+%Y-%m-%d'.md)"
 
 PROMPT='%F{green}%n@%m%u%f %~ $ '
 
