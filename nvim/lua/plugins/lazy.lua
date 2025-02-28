@@ -65,7 +65,7 @@ require("lazy").setup({
   -- Trouble
   {
     "folke/trouble.nvim",
-    dependencies = "kyazdani42/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
         -- your configuration comes here
@@ -80,18 +80,17 @@ require("lazy").setup({
 
   -- statusline
   {
-    -- TODO: no longer maintained
-    'famiu/feline.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    'nvim-lualine/lualine.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('feline').setup()
+      require('lualine').setup()
     end
   },
 
   -- bufferline
   {
     'akinsho/bufferline.nvim',
-    dependencies = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require("bufferline").setup {
         options = {
@@ -116,7 +115,20 @@ require("lazy").setup({
           open_file = { resize_window = false },
         },
       }
-      vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+      --vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+    end
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      "s1n7ax/nvim-window-picker",
+    },
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>e', ':Neotree<CR>', { noremap = true, silent = true })
     end
   },
 
