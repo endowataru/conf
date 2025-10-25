@@ -14,18 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- LSP
   {
-    "williamboman/mason.nvim",
-    config = function()
-      require("plugins/mason")
-    end
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("plugins/mason-lspconfig")
-    end
-  },
-  "neovim/nvim-lspconfig",
 
   -- Completion
   'hrsh7th/cmp-nvim-lsp',
@@ -43,9 +38,6 @@ require("lazy").setup({
   -- Snippets
   'hrsh7th/vim-vsnip',
   "rafamadriz/friendly-snippets",
-
-  -- LSP
-  "ray-x/lsp_signature.nvim",
 
   -- DAP
   {
@@ -160,13 +152,6 @@ require("lazy").setup({
   "jparise/vim-graphql", -- GraphQL
   "dart-lang/dart-vim-plugin", -- Dart
 
-  -- Rust
-  {
-    'simrat39/rust-tools.nvim',
-    config = function ()
-      require('rust-tools').setup({})
-    end
-  },
   -- Theme
   { "morhetz/gruvbox", config = function() vim.cmd [[colorscheme gruvbox]] end },
 })
