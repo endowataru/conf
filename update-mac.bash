@@ -27,6 +27,8 @@ if type rustup &> /dev/null; then
     rustup update
 fi
 if type cargo &> /dev/null; then
-    cargo install-update -a
+    if type cargo install-update &> /dev/null; then
+        cargo install-update -a
+    fi
 fi
 
